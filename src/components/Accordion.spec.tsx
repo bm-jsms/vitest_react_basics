@@ -1,5 +1,13 @@
-describe('should add two numbers', () => {
-	it('add two numbers', () => {
-		expect(1 + 2).toEqual(3);
+import { render, screen } from '@testing-library/react';
+import Accordion from './Accordion';
+
+describe('Accordion', () => {
+	it('renders the title', () => {
+		render(
+			<Accordion title='Hello'>
+				<p>My Title</p>
+			</Accordion>,
+		);
+		expect(screen.getByText('Hello')).toBeDefined();
 	});
 });
